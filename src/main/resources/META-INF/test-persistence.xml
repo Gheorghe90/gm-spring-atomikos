@@ -7,7 +7,7 @@
 	<persistence-unit name="testPU" transaction-type="JTA">
 		<class>com.test.weblogic.spring.model.User</class>
 		<properties>
-		    <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
+		    <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialecta" />
 		    <property name="hibernate.transaction.jta.platform" value="com.atomikos.icatch.jta.hibernate4.AtomikosPlatform" />
 		    <property name="hibernate.show_sql" value="true" />
 		    <property name="hibernate.id.new_generator_mappings" value="false" />

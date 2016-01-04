@@ -23,10 +23,10 @@ public class MainTest {
 	@BeforeClass
 	public static void setup() throws NamingException {
 		BasicDataSource dataSource = new BasicDataSource();
-		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://192.168.99.100:32768/mysql");
-		dataSource.setUsername("root");
-		dataSource.setPassword("secret");
+		dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+		dataSource.setUrl("jdbc:oracle:thin:@192.168.99.100:32770/xe");
+		dataSource.setUsername("system");
+		dataSource.setPassword("oracle");
 
 		SimpleNamingContextBuilder builder = new SimpleNamingContextBuilder();
 		builder.bind("jdbc/testJndi", dataSource);

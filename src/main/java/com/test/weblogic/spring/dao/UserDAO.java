@@ -8,5 +8,5 @@ public interface UserDAO {
 
 	void insertUser(User user);
 
-	List<User> findAllUsers();
+	List findAllUsers();
 }
