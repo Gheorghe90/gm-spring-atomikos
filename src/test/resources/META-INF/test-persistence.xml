@@ -4,11 +4,14 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
 	http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 
-	<persistence-unit name="testPU" transaction-type="RESOURCE_LOCAL">
+	<persistence-unit name="testPU" transaction-type="JTA">
 		<class>com.test.weblogic.spring.model.User</class>
-		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<properties>
-		    <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
+			<property name="hibernate.transaction.jta.platform" value="com.atomikos.icatch.jta.hibernate4.AtomikosPlatform" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.id.new_generator_mappings" value="false" />
+			<property name="hibernate.hbm2ddl.auto" value="create-drop"/>
 		</properties>
 	</persistence-unit>
 
