@@ -28,8 +28,7 @@ public class UserDAOImpl implements UserDAO {
 	public List<User> findAllUsers() {
 		CriteriaBuilder builder = entityManager.getCriteriaBuilder();
 		CriteriaQuery<User> cq = builder.createQuery(User.class);
-		Root<User> root = cq.from(User.class);
-		cq.select(root);
+		cq.select(cq.from(User.class));
 		return entityManager.createQuery(cq).getResultList();
 	}
 
